@@ -1,0 +1,23 @@
+.add-pages-backdrop { position: fixed; z-index: 100; inset: 0; display: flex; align-items: flex-end; justify-content: center; padding: 16px 12px calc(16px + env(safe-area-inset-bottom)); background: rgb(15 12 8 / 48%); backdrop-filter: blur(3px); }
+.add-pages-sheet { width: min(440px, 100%); padding: 8px 16px 15px; border: 1px solid var(--line-strong); border-radius: 24px; background: var(--paper-raised); color: var(--ink); box-shadow: 0 24px 72px rgb(14 10 5 / 34%); }
+.add-pages-grip { width: 42px; height: 4px; margin: 0 auto 10px; border-radius: 999px; background: var(--line-strong); }
+.add-pages-sheet > header { margin-bottom: 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.add-pages-sheet h2 { margin: 2px 0 0; font-family: 'Fraunces Variable', serif; font-size: 24px; font-weight: 560; letter-spacing: -.025em; }
+.add-pages-sheet > header .icon-button { width: 40px; height: 40px; border: 0; background: var(--canvas); }
+.add-pages-options { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.add-pages-options > button { min-height: 126px; padding: 16px 12px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 7px; border: 1px solid var(--line); border-radius: 17px; background: var(--canvas); text-align: center; }
+.add-pages-options > button:hover { border-color: var(--accent); background: var(--accent-soft); }
+.add-pages-icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 15px; background: var(--accent); color: var(--accent-ink); }
+.add-pages-icon svg { width: 25px; height: 25px; }
+.add-pages-options strong { font-size: 13px; }
+.add-pages-options small { color: var(--muted); font-size: 9.5px; line-height: 1.45; }
+.add-pages-note { margin: 13px 0 0; display: flex; align-items: center; justify-content: center; gap: 6px; color: var(--muted); font-size: 9.5px; text-align: center; }
+.add-pages-note svg { width: 13px; height: 13px; }
+@media (min-width: 720px) {
+  .add-pages-backdrop { align-items: center; padding-bottom: 16px; }
+  .add-pages-sheet { border-radius: 22px; }
+}
+@media (max-width: 350px) {
+  .add-pages-options { grid-template-columns: 1fr; }
+  .add-pages-options > button { min-height: 92px; }
+}

@@ -1,0 +1,70 @@
+# Dependencies and generated web/Electron output
+node_modules/
+/app/node_modules/
+/app/dist/
+/app/release/
+/app/test-results/
+/app/playwright-report/
+/app/qa-output/
+/app/qa-shots/
+
+# Android local state and generated output
+**/local.properties
+**/.gradle/
+/app/android/build/
+/app/android/app/build/
+/app/android/capacitor-cordova-android-plugins/
+/app/android/app/src/main/assets/public/
+/app/android/app/src/main/assets/capacitor.config.json
+/app/android/app/src/main/assets/capacitor.plugins.json
+/app/android/app/src/main/res/xml/config.xml
+/android-sdk/
+/android-avd/
+*.hprof
+
+# Signing and secrets
+/firma/
+**/*.keystore
+**/*.jks
+**/*.p12
+**/*.pfx
+**/*.pem
+**/*.key
+**/*.mobileprovision
+**/keystore.properties
+**/*credentials*.txt
+**/google-services.json
+**/.env
+**/.env.*
+!**/.env.example
+**/.npmrc
+!**/.npmrc.example
+
+# Packages and generated metadata
+*.apk
+*.aab
+*.ap_
+*.idsig
+*.exe
+*.msi
+*.blockmap
+*.log
+
+# Internal research, captures and delivery folders
+/referencia/
+/ayudacami/
+/pruebas/
+/qa_v04/
+/qa_v05/
+/backups/
+/entrega/
+/entrega-*/
+/CONTEXTO_VIVO.md
+/MEMORIA.md
+/herramientas/
+/app/test-fixtures/
+
+# Editor and OS
+.idea/
+.DS_Store
+Thumbs.db

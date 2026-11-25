@@ -1,0 +1,103 @@
+.quad-editor {
+  position: relative;
+  width: 100%;
+  line-height: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: none;
+}
+
+.quad-editor > img {
+  display: block;
+  width: 100%;
+  height: auto;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+
+.quad-editor-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.quad-editor-lines polygon {
+  fill: rgb(255 201 60 / 10%);
+  stroke: #ffc93c;
+  stroke-width: 3;
+  stroke-linejoin: round;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 1px 2px rgb(0 0 0 / 65%));
+}
+
+.quad-handle {
+  position: absolute;
+  z-index: 4;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  cursor: grab;
+  touch-action: none;
+}
+
+.quad-handle:active,
+.quad-handle.active {
+  cursor: grabbing;
+}
+
+.quad-handle > span {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 15px;
+  height: 15px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: #ffc93c;
+  box-shadow: 0 0 0 2px rgb(28 24 18 / 85%), 0 3px 12px rgb(0 0 0 / 45%);
+  transform: translate(-50%, -50%);
+}
+
+.quad-handle.active > span,
+.quad-handle:focus-visible > span {
+  width: 19px;
+  height: 19px;
+  border-color: #ffc93c;
+  background: #fff;
+  outline: none;
+}
+
+.quad-handle:disabled {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.quad-loupe {
+  position: absolute;
+  z-index: 6;
+  right: 12px;
+  bottom: 12px;
+  width: 132px;
+  height: 132px;
+  border: 2px solid #ffc93c;
+  border-radius: 18px;
+  background: #171512;
+  box-shadow: 0 12px 34px rgb(0 0 0 / 42%);
+  pointer-events: none;
+}
+
+.quad-loupe.left {
+  right: auto;
+  left: 12px;
+}
+
+.quad-loupe.top {
+  top: 12px;
+  bottom: auto;
+}

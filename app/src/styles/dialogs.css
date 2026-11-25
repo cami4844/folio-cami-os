@@ -1,0 +1,50 @@
+.modal-backdrop { position: fixed; z-index: 80; inset: 0; padding: 24px; display: flex; align-items: center; justify-content: center; background: rgba(20, 17, 13, .68); backdrop-filter: blur(6px); }
+.modal { width: min(540px, 100%); max-height: calc(100dvh - 48px); overflow-y: auto; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); box-shadow: 0 30px 90px rgba(0, 0, 0, .3); }
+.modal-header { padding: 23px 24px 19px; display: flex; align-items: flex-start; justify-content: space-between; gap: 15px; border-bottom: 1px solid var(--line); }
+.modal-header h2 { margin: 0 0 6px; font-size: 28px; font-weight: 520; letter-spacing: -.035em; }
+.modal-header p { margin: 0; color: var(--muted); font-size: 10px; }
+.modal-header .icon-button { width: 35px; height: 35px; }
+.form-grid { padding: 22px 24px; display: grid; grid-template-columns: 1fr 1fr; gap: 19px 18px; }
+.form-grid > label { display: flex; flex-direction: column; gap: 8px; color: var(--muted); font-size: 10px; font-weight: 700; }
+.form-grid select, .form-grid input:not([type='range']):not([type='checkbox']) { width: 100%; min-height: 41px; padding: 9px 11px; border: 1px solid var(--line); border-radius: 8px; outline: 0; background: var(--canvas); color: var(--ink); font-size: 11px; }
+.form-grid select:focus, .form-grid input:focus { border-color: var(--accent); }
+.form-grid input[type='range'] { width: 100%; accent-color: #c8950c; }
+.form-grid .full-field { grid-column: 1 / -1; }
+.form-grid .check-row { min-height: 32px; flex-direction: row; align-items: center; gap: 9px; color: var(--ink); font-weight: 600; }
+.check-row input { width: 17px; height: 17px; margin: 0; accent-color: #c8950c; }
+.modal-note { margin: 0 24px; padding: 12px 13px; border-left: 3px solid var(--accent); background: var(--canvas); color: var(--muted); font-size: 10px; line-height: 1.6; }
+.modal-actions { padding: 22px 24px 24px; display: flex; justify-content: flex-end; gap: 8px; }
+
+/* Exportación PDF con el archivo real renderizado antes de guardar. */
+.pdf-modal { width: min(1060px, 100%); display: flex; flex-direction: column; overflow: hidden; }
+.pdf-export-layout { min-height: 0; display: grid; flex: 1; grid-template-columns: minmax(380px, 1.15fr) minmax(350px, .85fr); overflow: hidden; }
+.pdf-preview-pane { min-width: 0; min-height: 500px; display: flex; flex-direction: column; background: #26231e; color: #f5f0e7; }
+.pdf-preview-status { min-height: 45px; padding: 7px 14px; display: flex; align-items: center; justify-content: space-between; gap: 10px; border-bottom: 1px solid rgba(255,255,255,.1); color: #d1c8bb; font-size: 9.5px; font-weight: 700; }
+.pdf-preview-status > div { display: flex; align-items: center; gap: 7px; }
+.pdf-preview-status button { width: 29px; height: 29px; padding: 0; display: grid; place-items: center; border-radius: 6px; background: rgba(255,255,255,.07); color: #f5f0e7; }
+.pdf-preview-status button:hover:not(:disabled) { background: rgba(255,255,255,.15); }
+.pdf-preview-status svg { width: 15px; height: 15px; }
+.pdf-preview-canvas { position: relative; min-width: 0; min-height: 0; padding: 18px; display: flex; flex: 1; align-items: center; justify-content: center; overflow: auto; }
+.pdf-preview-canvas canvas { display: block; max-width: 100%; height: auto; background: #fff; box-shadow: 0 18px 50px rgba(0,0,0,.36); }
+.pdf-preview-loading { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 10px; background: rgba(38,35,30,.7); backdrop-filter: blur(2px); font-size: 10.5px; }
+.pdf-preview-error { max-width: 340px; margin: auto; color: #ffd3cc; font-size: 11px; line-height: 1.6; text-align: center; }
+.pdf-options-pane { min-width: 0; overflow-y: auto; background: var(--paper); }
+.pdf-options-pane .form-grid { padding-top: 19px; padding-bottom: 17px; gap: 15px 14px; }
+.pdf-options-pane .modal-note { margin-bottom: 18px; }
+.pdf-modal > .modal-actions { padding-top: 15px; padding-bottom: 16px; border-top: 1px solid var(--line); background: var(--paper); }
+
+@media (max-width: 820px) {
+  .pdf-modal { overflow-y: auto; }
+  .pdf-export-layout { display: flex; flex-direction: column; overflow: visible; }
+  .pdf-preview-pane { height: 42vh; min-height: 330px; flex: 0 0 auto; }
+  .pdf-options-pane { overflow: visible; }
+  .pdf-options-pane .form-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 560px) {
+  .pdf-preview-pane { height: 37vh; min-height: 280px; }
+  .pdf-preview-canvas { padding: 12px; }
+  .pdf-options-pane .form-grid { grid-template-columns: 1fr; }
+  .pdf-preview-status { padding-right: 10px; padding-left: 10px; }
+  .pdf-modal > .modal-actions { position: sticky; bottom: 0; }
+}

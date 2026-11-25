@@ -1,0 +1,12 @@
+{
+  "name": "Folio — Powered by Cami-OS",
+  "short_name": "Folio",
+  "description": "Escáner documental local y gratuito.",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#F4F0E8",
+  "theme_color": "#FFC93C",
+  "icons": [
+    { "src": "./folio.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
